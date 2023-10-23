@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button> <a href="{% url 'index_url' %}">Bosh sahifa</a> </button>
+<h1>Yangi maxsulot qo'shish oynasi</h1>
+<form action="{% url 'create_product_url' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter Product name" name="name"><br><br>
+    <input type="number" placeholder="Enter Product price" name="price"><br><br>
+    <input type="number" placeholder="Enter Product quantity" name="quantity"><br><br>
+    <input type="date" placeholder="Enter Product date" name="date"><br><br>
+    <input type="file" name="photo"><br>
+    <button type="submit">Saqlash</button>
+</form>
+</body>
+</html>

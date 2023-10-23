@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button><a href="{% url 'index_url' %}">Bosh sahifa</a></button>
+<h1>Maxsulot o'zgartirish oynasi</h1>
+<form action="{% url 'update_product_url' product.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" value="{{ product.name }}" placeholder="Enter Product name"  name="name" required><br><br>
+    <input type="number" value="{{ product.price }}" placeholder="Enter Product price"  name="price" required><br><br>
+    <input type="number" value="{{ product.quantity }}" placeholder="Enter Product quantity" name="quantity" required><br><br>
+    <input type="date" value="{{ product.date }}" placeholder="Enter Product date" name="date" required><br><br>
+    <input type="file" name="photo"><br><br>
+    <button type="submit">Saqlash</button>
+</form>
+</body>
+</html>
